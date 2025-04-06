@@ -29,16 +29,32 @@ Then compressed file moves to /home/USERNAME/TRASH folder.
 
 This project uses compressing algorithm: lzma, gzip. If you do not have them
 installed (for example, on ubuntu):
-'''sh
+
+```sh
 $ sudo apt-get install lzma
 $ sudo apt-get install gzip
-'''
+```
 
 ## USAGE
 
 ## CONFIGURATION
 
 ## CONTRIBUTION
+
+### Description of commits
+| Tag      | Description                                              |
+|:---------|:---------------------------------------------------------|
+| build    | building a project or changing external dependencies     |
+| sec      | security, vulnerabilities                                |
+| ci       | setting up CI and working with scripts                   | 
+| docs     | updating documentation                                   |
+| feat     | adding new functionality                                 |
+| fix      | bug fixes                                                |
+| perf     | changes aimed at improving performance                   |
+| refactor | code edits without fixing errors or adding new functions |
+| revert   | rollback to previous commits                             |
+| style    | code style edits                                         |
+| test     | adding tests                                             |
 
 ## LICENSE
 
