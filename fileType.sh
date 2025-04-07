@@ -1,7 +1,7 @@
 #!/bin/bash 
 
 # Type:         function
-# Input:        FILE -> files' name
+# Input:        file -> files' name
 # Output:       result -> files' type
 # Description:  this finction defines files' type using command test ( [ ). If
 #               the file isn't a simple file, hard link file directory, symbol
@@ -19,27 +19,27 @@
 
 function fileType {
     local result
-    if [ -L ${FILE} ]; then
+    if [ -L ${file} ]; then
         result="symbolic link file"
-    elif [ -f ${FILE} ]; then
+    elif [ -f ${file} ]; then
         result="simple file"
 
         # Check: hardlink file
-        if [ "$(stat -c %h ${FILE})" -gt 1 ]; then
+        if [ "$(stat -c %h ${file})" -gt 1 ]; then
             result="hard link file"
         fi
-    elif [ -d ${FILE} ]; then
+    elif [ -d ${file} ]; then
         result="directory"
-    elif [ -c ${FILE} ]; then
+    elif [ -c ${file} ]; then
         result="character file"
-    elif [ -p ${FILE} ]; then
+    elif [ -p ${file} ]; then
         result="fifo-file"
-    elif [ -b ${FILE} ]; then
+    elif [ -b ${file} ]; then
         result="block file"
-    elif [ -S ${FILE} ]; then
+    elif [ -S ${file} ]; then
         result="socket file"
     else
-        echo "${FILE} has unknown type"
+        echo "${file} has unknown type"
         exit 1
     fi
     echo ${result}
