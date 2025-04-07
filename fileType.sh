@@ -18,42 +18,11 @@
 
 function fileType {
     local result
-    local type
 
-    type=$(ls -ld ${file} | awk '{print $1}' | head -c 1)
-    case ${type} in
-        -)
-            local num_hlink
-            
-            num_hlink=$(stat -c %h "$file")
-            if [ ${num_hlink} -gt 1 ]; then
-                result="hard link file"
-            else
-                result="simple file"
-            fi
-            ;;
-        d)
-            result="directory file"
-            ;;
-        l)
-            result="symbolic link file"
-            ;;
-        b)
-            result="block file"
-            ;;
-        c)
-            result="character file"
-            ;;
-        s)
-            result="socket file"
-            ;;
-        p)
-            result="fifo file"
-            ;;
-        *)
-            echo "${file} has unknown type"
-            exit 1
-            ;;
-    esac
+    num_hlink=$(stat -c %h "$file") 
+    if [ ${num_hlink} -gt 1 ]; then
+        result="hard link file"
+    fi
+    result=$(stat -c %F ${file})
     echo ${result}
 }
