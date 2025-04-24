@@ -5,7 +5,7 @@ mechanism. Project named DELETE fixes this problem
 
 ## DESCRIPTION
 
-In first, script DELETE compresses your file. A compression algorithm can be
+Script DELETE compresses your file. A compression algorithm can be
 selected:
 - .LZMA;
 - .GZIP.
