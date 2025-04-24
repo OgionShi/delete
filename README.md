@@ -35,6 +35,14 @@ $ sudo apt-get install lzma
 $ sudo apt-get install gzip
 ```
 
+This project uses bash version 5.0 and higher. If you don not have it
+installed (for example, on ubuntu):
+
+```
+$ bash --version
+$ sudo apt install bash=5.1-6ubuntu1
+```
+
 ## USAGE
 
 ## CONFIGURATION
