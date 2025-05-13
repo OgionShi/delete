@@ -1,62 +1,53 @@
 #!/usr/bin/env bats
 
-# 1. divide test
-# 2. replace a long way
-# 3. join 2 test with regular emmpty file and simple file
+# TYPE:         test
+# DESCRIPTION:  this script tests  _file_type function. This test uses several
+#               functions:
+#               1. _common_setup
+#               2. _create_files
+#               3. _delete_files
+#               4. _file_type
+# BAGS:         -
+# ADD:          solve problem for sudo in hidden directory
 
-setup() {
-    load '/home/ogion/Linux.Start/delete/test/_common_setup.sh'
+source "/home/ogion/Linux.Start/delete/test/file_src.bash"
 
-    # It is a directory with several empty files
-    mkdir -p /tmp/directory/file{1..3}
+setup(){
+    # Common settings for tests
+    source "/home/ogion/Linux.Start/delete/test/_common_setup.bash"
+    _common_setup
 
-    # This file has not any links
-    touch /tmp/regular_file
+    # Create files for tests
+    source "/home/ogion/Linux.Start/delete/test/_create_files.bash"
+    _create_files >&3
 
-    # This file has several links and some text
-    # This file also is a hard link file
-    echo "Some text" > /tmp/simple_file
-
-    # This file is a hard link file
-    ln /tmp/simple_file /tmp/hard_link_file
-
-    # This file is a symbolic link file
-    ln -s /tmp/simple_file /tmp/symbolic_link_file
+    # Testing function
+    source "/home/ogion/Linux.Start/delete/src/_file_type.bash"
 }
 
 teardown() {
-    rm -f /tmp/regular_file /tmp/simple_file /tmp/hard_link_file /tmp/symbolic_link_file
-    rm -r /tmp/directory/
+    # Delete files for tests
+    source "/home/ogion/Linux.Start/delete/test/_delete_files.bash"
+    _delete_files >&3
 }
 
-source /home/ogion/Linux.Start/delete/src/_file_type.sh
 
-@test "Check _file_type.sh runs and file is a directory" {
-    run _file_type /tmp/directory
-    [ "$status" -eq 0 ]
-    [ "$output" = "directory" ]
-}
-
-@test "Check _file_type.sh runs and file is a regular empty file" {
-    run _file_type /tmp/regular_file
-    [ "$status" -eq 0 ]
-    [ "$output" = "regular empty file" ]
-}
-
-@test "Check _file_type.sh runs and file is a regular file" {
-    run _file_type /tmp/simple_file
-    [ "$status" -eq 0 ]
-    [ "$output" = "regular file" ]
-}
-
-@test "Check _file_type.sh runs and file is a hard link file" {
-    run _file_type /tmp/hard_link_file
-    [ "$status" -eq 0 ]
-    [ "$output" = "hard link file" ]
-}
-
-@test "Check _file_type.sh runs and file is a symbolic link file" {
-    run _file_type /tmp/symbolic_link_file
-    [ "$status" -eq 0 ]
-    [ "$output" = "symbolic link" ]
+@test "Test file's type" {
+    echo "Start testing ..." >&3
+    for file in "${!FILES_PATHS[@]}"; do
+        run _file_type "${FILES_PATHS[${file}]}"
+        [ "${status}" -eq 0 ] || {
+            echo "Failed for ${FILES_PATHS[$file]}" >&2
+            echo "Output: $output" >&2
+            false
+        }
+        [ "$output" == "${FILES_EXPECTED[$file]}" ] && {
+            echo "Tested file: ${file} is a ${output}" >&3
+            } || {
+             echo "Mismatch for ${FILES_PATHS[$file]}" >&2
+             echo "Expected: ${FILES_EXPECTED[$file]}" >&2
+             echo "Got: $output" >&2
+             false
+            }
+    done
 }
