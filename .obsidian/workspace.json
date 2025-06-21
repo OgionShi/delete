@@ -1,0 +1,228 @@
+{
+  "main": {
+    "id": "d0229556399fd34e",
+    "type": "split",
+    "children": [
+      {
+        "id": "d40cb85b04544e47",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ed4b411c6d65b91d",
+            "type": "leaf",
+            "state": {
+              "type": "canvas",
+              "state": {
+                "file": "DELETE.canvas",
+                "viewState": {
+                  "x": 0,
+                  "y": -2.842170943040401e-14,
+                  "zoom": 0
+                }
+              },
+              "icon": "lucide-layout-dashboard",
+              "title": "DELETE"
+            }
+          },
+          {
+            "id": "c5edef380df1fb61",
+            "type": "leaf",
+            "state": {
+              "type": "excalidraw",
+              "state": {
+                "file": "Excalidraw/Drawexcalidrawing 2025-06-21 12.54.21..md"
+              },
+              "icon": "excalidraw-icon",
+              "title": "Drawexcalidrawing 2025-06-21 12.54.21."
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "29e55c1dd0b3a5c9",
+    "type": "split",
+    "children": [
+      {
+        "id": "f6d1c6d2f58650fb",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "85ca87c15754b538",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Файловый менеджер"
+            }
+          },
+          {
+            "id": "802c4194b530370f",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Поиск"
+            }
+          },
+          {
+            "id": "6721bd2d19821119",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Закладки"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "a97126195199769d",
+    "type": "split",
+    "children": [
+      {
+        "id": "221d497f52dd13be",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "8673645bec59bf0b",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "DELETE.canvas",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Обратные ссылки для DELETE"
+            }
+          },
+          {
+            "id": "54ed30609244fa04",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "DELETE.canvas",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Исходящие ссылки из DELETE"
+            }
+          },
+          {
+            "id": "6c97a86748e84821",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Теги"
+            }
+          },
+          {
+            "id": "7783f22dc4ac264d",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Excalidraw/Drawexcalidrawing 2025-06-21 12.54.21..md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Структура Drawexcalidrawing 2025-06-21 12.54.21."
+            }
+          },
+          {
+            "id": "5ace812b286a1b2f",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "Все свойства"
+            }
+          },
+          {
+            "id": "5e8f2325d28e6414",
+            "type": "leaf",
+            "state": {
+              "type": "file-properties",
+              "state": {
+                "file": "Excalidraw/Drawexcalidrawing 2025-06-21 12.54.21..md"
+              },
+              "icon": "lucide-info",
+              "title": "Свойства файла для Drawexcalidrawing 2025-06-21 12.54.21."
+            }
+          }
+        ],
+        "currentTab": 5
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Меню быстрого перехода": false,
+      "graph:Граф": false,
+      "canvas:Создать новый холст": false,
+      "daily-notes:Сегодняшняя заметка": false,
+      "templates:Вставить шаблон": false,
+      "command-palette:Открыть палитру команд": false,
+      "obsidian-excalidraw-plugin:Создать новый чертеж": false
+    }
+  },
+  "active": "c5edef380df1fb61",
+  "lastOpenFiles": [
+    "DELETE.canvas",
+    "Excalidraw/Drawexcalidrawing 2025-06-21 12.54.21..md",
+    "Excalidraw",
+    "Makefile~",
+    "READMD.md",
+    "Без названия.canvas",
+    "conf/structure_of_project.mk",
+    "src/_define_type_of_file.bash",
+    "src/_file_type.bash~",
+    "src/_file_type.bash",
+    "Makefile"
+  ]
+}
